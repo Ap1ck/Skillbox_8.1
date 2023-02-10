@@ -168,8 +168,8 @@ GameObject:
   - component: {fileID: 95188799}
   - component: {fileID: 95188803}
   - component: {fileID: 95188802}
-  - component: {fileID: 95188800}
   - component: {fileID: 95188804}
+  - component: {fileID: 95188800}
   - component: {fileID: 95188801}
   m_Layer: 0
   m_Name: Cube4
@@ -281,9 +281,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa66ebc282713441a980d3bafd45a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cubesList:
+  - {fileID: 631737204}
+  - {fileID: 594111767}
+  - {fileID: 1002616866}
+  - {fileID: 95188799}
   _speed: 5
-  _moving: 0
-  _distance: {fileID: 95188800}
+  _moving: 1
+  _distance: {fileID: 942309967}
 --- !u!1 &256781867
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,8 +395,8 @@ GameObject:
   - component: {fileID: 594111767}
   - component: {fileID: 594111766}
   - component: {fileID: 594111765}
-  - component: {fileID: 594111769}
   - component: {fileID: 594111768}
+  - component: {fileID: 594111769}
   - component: {fileID: 594111764}
   m_Layer: 0
   m_Name: Cube2
@@ -489,9 +494,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa66ebc282713441a980d3bafd45a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cubesList:
+  - {fileID: 631737204}
+  - {fileID: 594111767}
+  - {fileID: 1002616866}
+  - {fileID: 95188799}
   _speed: 5
-  _moving: 0
-  _distance: {fileID: 1002616871}
+  _moving: 1
+  _distance: {fileID: 594111769}
 --- !u!114 &594111769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,7 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a8f4453e26b3e468191a7d00c0c941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubePosition: {fileID: 631737204}
+  _cubePosition: {fileID: 594111767}
   _passDistance: {fileID: 1002616866}
 --- !u!1 &631737200
 GameObject:
@@ -517,11 +527,11 @@ GameObject:
   - component: {fileID: 631737204}
   - component: {fileID: 631737203}
   - component: {fileID: 631737202}
-  - component: {fileID: 631737206}
   - component: {fileID: 631737205}
+  - component: {fileID: 631737206}
   - component: {fileID: 631737201}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Cube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -616,6 +626,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa66ebc282713441a980d3bafd45a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cubesList:
+  - {fileID: 631737204}
+  - {fileID: 594111767}
+  - {fileID: 1002616866}
+  - {fileID: 95188799}
   _speed: 5
   _moving: 1
   _distance: {fileID: 631737206}
@@ -956,6 +971,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 942309966}
+  - component: {fileID: 942309967}
   m_Layer: 0
   m_Name: Finish
   m_TagString: Untagged
@@ -977,6 +993,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &942309967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942309965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a8f4453e26b3e468191a7d00c0c941, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cubePosition: {fileID: 942309966}
+  _passDistance: {fileID: 942309966}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,8 +1101,8 @@ GameObject:
   - component: {fileID: 1002616866}
   - component: {fileID: 1002616870}
   - component: {fileID: 1002616869}
-  - component: {fileID: 1002616871}
   - component: {fileID: 1002616867}
+  - component: {fileID: 1002616871}
   - component: {fileID: 1002616868}
   m_Layer: 0
   m_Name: Cube3
@@ -1108,9 +1138,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa66ebc282713441a980d3bafd45a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cubesList:
+  - {fileID: 631737204}
+  - {fileID: 594111767}
+  - {fileID: 1002616866}
+  - {fileID: 95188799}
   _speed: 5
-  _moving: 0
-  _distance: {fileID: 95188800}
+  _moving: 1
+  _distance: {fileID: 1002616871}
 --- !u!65 &1002616868
 BoxCollider:
   m_ObjectHideFlags: 0

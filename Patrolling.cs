@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Patrolling : MonoBehaviour
 {
+    [SerializeField] private List<Transform> _cubesList;
     [SerializeField] private float _speed;
     [SerializeField] private bool _moving;
 
