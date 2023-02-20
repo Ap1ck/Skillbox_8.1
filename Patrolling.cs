@@ -9,11 +9,11 @@ public class Patrolling : MonoBehaviour
     [SerializeField] private bool _moving;
 
     private Vector3 _target;
-    private int _index = 0;
+    private int _index = 5;
 
     private void Start()
     {
-        _target = _allPointList[_index].position;
+        _target = _allPointList[_index].transform.position;
     }
 
     private void Update()
@@ -28,16 +28,19 @@ public class Patrolling : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
 
-        if (transform.position == _target)
+        if (_target == transform.position)
         {
-            if (_target == _allPointList[_index++].position)
+            if (_allPointList[_index].position == _allPointList[_index - 1].position)
             {
-                _target = _allPointList[_index].position;
+                transform.LookAt(_allPointList[_index++].position);
+                _target = _allPointList[_index++].position;
             }
-            else if (_target == _allPointList[_index--].position)
+            else if (_allPointList[_index].position == _allPointList[0].position)
             {
-                _target = _allPointList[_index].position;
+                transform.LookAt(_allPointList[_index--].position);
+                _target = _allPointList[_index--].position;
             }
         }
     }
 }
+
