@@ -6,14 +6,13 @@ public class Patrolling : MonoBehaviour
 {
     [SerializeField] private List<Transform> _allPointList;
     [SerializeField] private float _speed;
-    [SerializeField] private bool _moving;
 
     private Vector3 _target;
-    private int _index = 5;
+    private int _index = 0;
 
     private void Start()
     {
-        _target = _allPointList[_index].transform.position;
+        _target = _allPointList[_index].position;
     }
 
     private void Update()
@@ -30,14 +29,12 @@ public class Patrolling : MonoBehaviour
 
         if (_target == transform.position)
         {
-            if (_allPointList[_index].position == _allPointList[_index - 1].position)
+            if(_target == _allPointList[_index++].position)
             {
-                transform.LookAt(_allPointList[_index++].position);
-                _target = _allPointList[_index++].position;
+                _target = _allPointList[_index].position;
             }
-            else if (_allPointList[_index].position == _allPointList[0].position)
+            else if (_allPointList[_index].position == _allPointList[_index-1].position)
             {
-                transform.LookAt(_allPointList[_index--].position);
                 _target = _allPointList[_index--].position;
             }
         }
