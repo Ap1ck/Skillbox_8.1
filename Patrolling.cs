@@ -7,35 +7,46 @@ public class Patrolling : MonoBehaviour
     [SerializeField] private List<Transform> _allPointList;
     [SerializeField] private float _speed;
 
+    private Vector3 _newPosition;
     private Vector3 _target;
     private int _index = 0;
-
-    private void Start()
-    {
-        _target = _allPointList[_index].position;
-    }
+    private float _distance;
+    private bool _moving = true;
 
     private void Update()
-    {
-        Move();
-    }
-
-    private void Move()
     {
         transform.Rotate(0, 0, 1);
         transform.LookAt(_target);
 
-        transform.position = Vector3.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
+        _target = _allPointList[_index].transform.position;
+        _newPosition = Vector3.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
+        transform.position = _newPosition;
 
-        if (_target == transform.position)
+        _distance = Vector3.Distance(transform.position, _target);
+
+        if (_distance <= 0.05)
         {
-            if(_target == _allPointList[_index++].position)
+            if (_moving)
             {
-                _target = _allPointList[_index].position;
+                if (_index < _allPointList.Count - 1)
+                {
+                    _index++;
+                    transform.LookAt(_target);
+                }
+                else
+                {
+                    _moving = false;
+                }
             }
-            else if (_allPointList[_index].position == _allPointList[_index-1].position)
+            else
             {
-                _target = _allPointList[_index--].position;
+                _index--;
+                transform.LookAt(_target);
+
+                if (_index == 0)
+                {
+                    _moving = true;
+                }
             }
         }
     }
