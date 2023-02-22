@@ -7,7 +7,6 @@ public class Patrolling : MonoBehaviour
     [SerializeField] private List<Transform> _allPointList;
     [SerializeField] private float _speed;
 
-    private Vector3 _newPosition;
     private Vector3 _target;
     private int _index = 0;
     private float _distance;
@@ -19,9 +18,8 @@ public class Patrolling : MonoBehaviour
         transform.LookAt(_target);
 
         _target = _allPointList[_index].transform.position;
-        _newPosition = Vector3.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
-        transform.position = _newPosition;
-
+        transform.position = Vector3.MoveTowards(transform.position, _target, _speed * Time.deltaTime);
+  
         _distance = Vector3.Distance(transform.position, _target);
 
         if (_distance <= 0.05)
